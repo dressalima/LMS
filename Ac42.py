@@ -184,7 +184,7 @@ class Mensagem():
 u1 = Usuario(1, 'dressalima', '1234', '09/07/2021')
 u2 = Usuario(2, 'angel12', '3377', '08/12/2021')
 u3 = Usuario(3, 'menina22', '2221', '03/03/2022')
-u4 = Usuario(4, 'dothy44', '5521', '08/11/2023')
+u4 = Usuario(4, 'dothy44', '5521', '08/11/2029')
 
 aluno1 = Aluno(1, u1, 'Andressa', 'andressinha@gmail.com', '99190-7788', '1801004')
 
