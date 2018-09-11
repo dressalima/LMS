@@ -20,17 +20,21 @@ class Coordenador():
         return 'Coordenador: {} Usuario: {}  E-mail: {} Celular: {}'.format(self.nome, self.idusuario, self.email, self.celular)
 
 class Aluno():
-
-    def __init__(self, id, idusuario, nome, email, celular, ra):
-        self.id= id 
+    def __init__(self, id, idusuario, nome, email, celular, ra, foto):
+        self.id = id
         self.idusuario = idusuario
-        self.nome= nome
-        self.email= email
-        self.celular= celular
-        self.ra= ra
+        self.nome = nome
+        self.email = email
+        self.celular = celular
+        self.ra = ra
+        self.foto = url
+
+    def fotoaluno(self, foto):
+        self.foto = images/photo/andressa.jpg
 
     def __str__(self):
-        return 'Aluno: {} Usuario: {} E-mail: {} Celular: {} Ra: {}'.format(self.nome, self.idusuario, self.email, self.celular, self.ra)
+        return 'Aluno: {} Usuario: {} E-mail: {} Celular: {} Ra: {} Foto: {}'.format(self.nome, self.idusuario, self.email,
+                                                                            self.celular, self.ra, self.fotoaluno)
 
 
 class Professor():
