@@ -150,7 +150,7 @@ class AtividadeVinculada():
         self.dtfimrespostas= dtfimrespostas
         
     def __str__(self):
-        return '
+        return 'Status: {} Inicio das Respostas: {} Fim das Respostas: {}'.format(self.status, self.dtiniciorespostas, self.dtfimrespostas)
 
 class Entrega():
 
@@ -167,6 +167,10 @@ class Entrega():
         self.dtavaliacao= dtavaliacao
         self.obs= obs
 
+    def __str__(self):
+        return 'Resposta: {} Data da Entrega: {} Status: {} Professor: {} Nota: {} Data da Avaliação {} Obs: {}'.format(self.resposta,
+                                                                                           self.dtentrega, self.status, self.idprofessor, self.nota, self.dtavaliacao, self.obs)
+        
 class Mensagem():
 
     def __init__(self, id, idaluno, idprofessor, assunto, referencia, conteudo, status, dtenvio, dtresposta, resposta):
@@ -180,7 +184,7 @@ class Mensagem():
         self.dtenvio= dtenvio
         self.dtresposta= dtresposta
         self.resposta= resposta
-
+        
 
 u1 = Usuario(1, 'dressalima', '1234', '09/07/2021')
 u2 = Usuario(2, 'angel12', '3377', '08/12/2021')
