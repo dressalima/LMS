@@ -30,11 +30,11 @@ class Aluno():
         self.foto = url
 
     def fotoaluno(self, foto):
-        self.foto = images/photo/andressa.jpg
+        self.foto = ''
 
     def __str__(self):
         return 'Aluno: {} Usuario: {} E-mail: {} Celular: {} Ra: {} Foto: {}'.format(self.nome, self.idusuario, self.email,
-                                                                            self.celular, self.ra, self.fotoaluno)
+                                                                            self.celular, self.ra, self.aluno)
 
 
 class Professor():
@@ -94,15 +94,20 @@ class Disciplina_Ofertada():
         self.criterioAvaliacao= criterioAvaliacao
         self.planodeaulas= planodeaulas
 
+    def __str__(self)
+        return 'Coordenador: {} Inicio da Matricula: {} Fim da Matricula: {} IdDisciplina: {} Curso: {} Ano: {} Semestre: {} Turma: {} Professor: {} Metodologia: {} Plano de Aulas: {}'.format(self.idcoordenador,self.dtiniciomatricula,
+        self.dtfimmatricula, self.idcurso,self.ano, self.idprofessor, self.metodologia, self.recursos, self.criterioAvaliacao, self.planodeaulas)
 
-
+    
 class Curso():
 
     def __init__(self, id, nome):
         self.id= id
         self.nome= nome
-    
 
+    def __str__(self)
+        return 'Curso: {}'.format(self.nome)
+        
 class SolicitacaoMatricula():
 
     def __init__(self, id, idaluno, iddisciplinaofertada, dtsolicitacao, idcoordenador, status):
@@ -127,7 +132,8 @@ class Atividade():
         self.extras= extras
         self.idprofessor= idprofessor
 
-   
+   def __str__(self):
+        return 'Titulo: {} Descrição {} Conteudo: {} Tipo: {}, Extras: {} Professor: {}'.format(self.titulo, self.descricao, self.conteudo, self.tipo, self.extras, self.idprofessor)
 
 
 
@@ -142,6 +148,9 @@ class AtividadeVinculada():
         self.status= status
         self.dtiniciorespostas= dtiniciorespostas
         self.dtfimrespostas= dtfimrespostas
+        
+    def __str__(self):
+        return '
 
 class Entrega():
 
