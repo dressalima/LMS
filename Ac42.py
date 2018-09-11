@@ -4,9 +4,9 @@ class Usuario():
         self._id= id
         self._login= login
         self._senha= senha
-        self._datadeexpiracao= datadeexpiracao
-
-
+        self._datadeexpiracao= 01/01/1900
+        
+        
 class Coordenador():
     
     def __init__(self,id, idusuario, nome, email, celular):
@@ -53,10 +53,10 @@ class Disciplina():
      conteudoprogramatico, bibliografiabasica, bibliografiacomplementar, percentualpratico, percentualteorico, idcoordenador):
         self.id= id
         self.nome= nome
-        self.data= data
-        self.status= status
+        self.data= getdate()
+        self.status= 'Aberta'
         self.planodensino= planodensino
-        self.cargahoraria= cargahoraria
+        self.cargahoraria= 40
         self.competencias= competencias
         self.habilidades= habilidades
         self.ementa= ementa
@@ -98,7 +98,6 @@ class Curso():
         self.id= id
         self.nome= nome
     
-    
 
 class SolicitacaoMatricula():
 
@@ -106,9 +105,9 @@ class SolicitacaoMatricula():
         self.id= id
         self.idaluno= idaluno
         self.iddisciplinaofertada= iddisciplinaofertada
-        self.dtsolicitacao= dtsolicitacao
+        self.dtsolicitacao= getdate()
         self.idcoordenador= idcoordenador 
-        self.status= status
+        self.status= 'Solicitada'
 
     def __str__(self):
         return 'Aluno: {} Disciplina Ofertada: {} Data de Solicitação: {} Coordenador: {} Status: {}'.format(self.idaluno, self.iddisciplinaofertada, self.dtsolicitacao, self.idcoordenador, self.status)
@@ -148,7 +147,7 @@ class Entrega():
         self.idatividadevinculada= idatividadevinculada
         self.titulo= titulo
         self.resposta= resposta
-        self.dtentrega= dtentrega
+        self.dtentrega= getdate()
         self.status= status
         self.idprofessor= idprofessor
         self.nota= nota
