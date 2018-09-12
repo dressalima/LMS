@@ -6,7 +6,7 @@ class Usuario():
         self._senha = senha
         self._datadeexpiracao = datadeexpiracao
 
-
+    
 
 class Coordenador():
 
@@ -35,7 +35,7 @@ class Aluno():
 
     def __str__(self):
         return 'Aluno: {} Usuario: {} E-mail: {} Celular: {} Ra: {}'.format(self.nome, self.idusuario, self.email,
-                                                                            self.celular, self.ra)
+                                                                            self.celular, self.ra, self.foto)
 
 
 class Professor():
@@ -99,6 +99,12 @@ class Disciplina_Ofertada():
         self.recursos = recursos
         self.criterioAvaliacao = criterioAvaliacao
         self.planodeaulas = planodeaulas
+    
+    def __str__(self):
+        return 'Coordenador: {} Data inicio de matricula: {} Data do fim da matricula: {} Disciplina: {} Curso: {} Ano: {} Semestre: {} Turma: {} Professor: {} Metodologia:{} Recursos: {} Criterio de Avaliacao:{} Plano de aulas: {}'.format(
+            self.idcoordenador, self.dtiniciomatricula, self.dtfimmatricula, self.iddisciplina,
+            self.idcurso, self.ano, self.semestre, self.turma, self.idprofessor,
+            self.metodologia, self.recursos, self.criterioAvaliacao, self.planodeaulas)
 
 
 class Curso():
@@ -107,6 +113,8 @@ class Curso():
         self.id = id
         self.nome = nome
 
+    def __str__(self):
+        return 'Nome: {}'.format(self.nome)
 
 class SolicitacaoMatricula():
 
@@ -117,6 +125,7 @@ class SolicitacaoMatricula():
         self.dtsolicitacao = dtsolicitacao
         self.idcoordenador = idcoordenador
         self.status = status
+
 
     def __str__(self):
         return 'Aluno: {} Disciplina Ofertada: {} Data de Solicitação: {} Coordenador: {} Status: {}'.format(
@@ -134,6 +143,10 @@ class Atividade():
         self.extras = extras
         self.idprofessor = idprofessor
 
+    def __str__(self):
+        return 'Atividade: {} Descricao: {} Conteudo: {} Tipo: {} Extras: {} Professor {}'.format(
+            self.titulo, self.descricao, self.conteudo, self.tipo, self.extras, self.idprofessor)
+
 
 class AtividadeVinculada():
 
@@ -147,6 +160,10 @@ class AtividadeVinculada():
         self.status = status
         self.dtiniciorespostas = dtiniciorespostas
         self.dtfimrespostas = dtfimrespostas
+    
+    def __str__(self):
+        return 'Atividade: {} Professor: {} Disciplina Ofertada: {} Rotulo: {} Status: {} Data inicio de respostas: {} Data fim respostas: {}'.format(
+            self.idatividade, self.idprofessor, self.iddisciplinaofertada, self.rotulo, self.status,  self.dtiniciorespostas, self.dtfimrespostas)
 
 
 class Entrega():
@@ -165,6 +182,9 @@ class Entrega():
         self.dtavaliacao = dtavaliacao
         self.obs = obs
 
+    def __str__(self):
+        return 'Aluno: {} Atividade Vinculada: {}Titulo: {} Resposta: {} Data de entrega: {} Status: {} Professor: {} Nota: {} Data de avaliacao: {} Obs: {}'.format(
+            self.idaluno, self.idatividadevinculada, self.titulo, self.resposta, self.dtentrega,  self.status, self.idprofessor, self.nota, self.dtavaliacao, self.obs)
 
 class Mensagem():
 
@@ -179,15 +199,26 @@ class Mensagem():
         self.dtenvio = dtenvio
         self.dtresposta = dtresposta
         self.resposta = resposta
+    
+    def __str__(self):
+        return 'Aluno: {} Professor: {} Assunto: {} Referencia: {} Conteudo: {} Status: {} Data de envio: {} Data de resposta: {} Resposta: {}'.format(
+            self.idaluno, self.idprofessor, self.assunto, self.referencia, self.conteudo,  self.status, self.dtenvio, self.dtresposta, self.resposta)
 
 
+#testando
 u1 = Usuario(1, 'dressalima', '1234', '09/07/2021')
+
 u2 = Usuario(2, 'angel12', '3377', '08/12/2021')
 u3 = Usuario(3, 'menina22', '2221', '03/03/2022')
 u4 = Usuario(4, 'dothy44', '5521', '08/11/2023')
 
-aluno1 = Aluno(1, u1, 'Andressa', 'andressinha@gmail.com', '99190-7788', '1801004')
+p1= Professor(1,u2,"alex@gmail.com", "99870-0978","Alex")
+
+aluno1 = Aluno(1, u1, 'Andressa', 'andressinha@gmail.com', '99190-7788', '1801004', "heuheu")
 
 coord1 = Coordenador(1, u2, 'Angelica Sousa', 'angelica@gmail.com', '97199-0078')
 
-print(coord1)
+c1= Curso(1,"Matematica")
+a1= Atividade(1,"Conjuntos","heueh", "heue", "heueh", "heueh", p1   )
+
+print(aluno1)
